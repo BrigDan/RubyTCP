@@ -1,8 +1,10 @@
 require 'socket'
-PORT = ARGV.first
 if ARGV.empty?
-	puts "Error, Please set a port after the argument."
+	puts "Error, Please set a port by giving it as an argument"
+	exit
 end
+
+PORT = ARGV.first.to_i
 
 def handle_connection(client)
 	puts "New Client! #{client}"
